@@ -1,0 +1,5 @@
+<%= form_for [current_user, Item.new] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Enter item name" %>
+  <%= f.submit "Save", class: 'btn btn-success' %>
+<% end %>
