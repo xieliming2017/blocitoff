@@ -5,16 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.new(
-  email: "user1@email.com",
-  password: "111111",
-  password_confirmation: "111111"
-)
-user.save!
 
 10.times do
+  User.create!(
+    email: Faker::Internet.email ,
+    password: "111111",
+    password_confirmation: "111111"
+    )
+end
+
+users = User.all
+
+50.times do
   Item.create!(
     name: Faker::Internet.domain_name,
-    user: user
+    user: users.sample
   )
 end
+
+items = Item.all
+
+puts "Seeding finished"
+puts "#{users.count} users created"
+puts "#{items.count} items created"
