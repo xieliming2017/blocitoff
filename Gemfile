@@ -27,6 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap'
+gem 'bootstrap-sass'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'devise'
