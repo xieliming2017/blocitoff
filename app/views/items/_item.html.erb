@@ -1,8 +1,5 @@
 <p>
   <strong>Name: </strong></s><%= item.name %>
   <strong>User: </strong><%= item.user.email %>
-  <%= link_to "", [item.user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
-  <%= content_tag :button, class: "delete-buttons", id: "#{item.id}", data: {url: "#{item.user.id}/items/#{item.id}"} do -%>
-    Delete
-  <% end %>
+  <%= link_to 'Delete', user_item_path(item.user, item), { method: :delete, remote: true } %>
 </p>

@@ -4,7 +4,10 @@
 <hr />
 <h2>User's To-do Items(total: <%= @user.items.count %>)</h2>
 
-<%= render @user.items %>
+<div id="user-items">
+  <%= render partial: 'items/item_list'%>
+</div>
+
 <hr />
 <h2>Create new Item</h2>
 

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def create
     @item = Item.new
     @item.name = params[:item][:name]
@@ -15,10 +15,11 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
+    @user = @item.user
     if @item.destroy
-      redirect_to @item.user
-    else
-      redirect_to @item.user
+      respond_to do |format|
+        format.js
+      end
     end
   end
 end

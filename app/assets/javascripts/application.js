@@ -14,30 +14,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery3
+//= require jquery_ujs
+
 //= require popper
 //= require bootstrap-sprockets
-// $(document).ready(function(){
-//   var buttons = $(".destroy");
-//
-//   for(var i = 0; i < buttons.length; i++){
-//     buttons[i].on('click', function(){
-//       $.ajax({
-//         url: buttons[i].data(url),
-//         type: 'DELETE',
-//         success: function(r){
-//
-//         }
-//       });
-//     });
-
-
-$(document).ready(function(){
-  var buttons = $('.delete-buttons');
-
-  console.log(buttons);
-  buttons.forEach(function(){
-    $(this).on('click', function(){
-      $(this).text('clicked');
-    })
-  });
-});
