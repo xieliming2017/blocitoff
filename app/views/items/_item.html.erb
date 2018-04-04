@@ -1,6 +1,6 @@
 <p>
   <strong>Name: </strong></s><%= item.name %>
   <strong>User: </strong><%= item.user.email %>
-  -Time remaining: <%= distance_of_time_in_words(item.created_at + 7.hours, Time.now, include_seconds: true)   %>
-  <%= link_to 'Delete', user_item_path(item.user, item), { method: :delete, remote: true } %>
+  -Time remaining: <%= distance_of_time_in_words(Time.now, item.created_at + 7.days)   %>
+  <span><%= link_to '', user_item_path(item.user, item), { method: :delete, remote: true, class: 'glyphicon glyphicon-ok' } %></span>
 </p>
